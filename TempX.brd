@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.005" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.001" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -180,14 +180,18 @@
 </layers>
 <board>
 <plain>
-<text x="40.1828" y="4.953" size="0.6096" layer="21" font="vector" rot="R180">autosportlabs.com</text>
-<text x="34.3662" y="8.763" size="0.6096" layer="22" font="vector" rot="MR180">Rev A</text>
-<text x="31.75" y="5.207" size="0.6096" layer="21" rot="R90">TempX</text>
-<circle x="35.814" y="6.604" radius="5.08" width="0.0254" layer="20"/>
-<circle x="32.258" y="9.017" radius="0.508" width="0" layer="1"/>
-<circle x="32.258" y="9.017" radius="0.5588" width="0" layer="29"/>
-<circle x="38.735" y="3.429" radius="0.508" width="0" layer="1"/>
-<circle x="38.735" y="3.429" radius="0.5588" width="0" layer="29"/>
+<text x="10.0838" y="1.016" size="0.6096" layer="22" font="vector" rot="MR180">autosportlabs.com</text>
+<text x="14.9352" y="4.191" size="0.6096" layer="22" font="vector" rot="MR180">Rev A</text>
+<text x="18.923" y="3.81" size="0.6096" layer="22" rot="MR270">TempX</text>
+<circle x="0.635" y="3.937" radius="0.2032" width="0" layer="1"/>
+<circle x="0.635" y="3.937" radius="0.2286" width="0" layer="29"/>
+<circle x="18.7706" y="0.5842" radius="0.2032" width="0" layer="1"/>
+<circle x="18.7706" y="0.5842" radius="0.2286" width="0" layer="29"/>
+<wire x1="-0.127" y1="0" x2="0" y2="0" width="0" layer="20"/>
+<wire x1="0" y1="0" x2="19.304" y2="0" width="0" layer="20"/>
+<wire x1="19.304" y1="0" x2="19.304" y2="4.572" width="0" layer="20"/>
+<wire x1="19.304" y1="4.572" x2="0" y2="4.572" width="0" layer="20"/>
+<wire x1="0" y1="4.572" x2="0" y2="0" width="0" layer="20"/>
 </plain>
 <libraries>
 <library name="TMP36">
@@ -257,12 +261,14 @@ Cream on SMD OFF.&lt;br&gt;
 new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
 <packages>
-<package name="TP20R">
+<package name="P1-17">
 <description>&lt;b&gt;TEST PAD&lt;/b&gt;</description>
-<smd name="TP" x="0" y="0" dx="2" dy="2" layer="1" roundness="100" cream="no"/>
-<text x="-1" y="1.05" size="1.27" layer="25">&gt;NAME</text>
-<text x="-0.762" y="-1.016" size="0.0254" layer="27">&gt;VALUE</text>
-<text x="0" y="-2.54" size="1" layer="37">&gt;TP_SIGNAL_NAME</text>
+<circle x="0" y="0" radius="0.8128" width="0.1524" layer="51"/>
+<pad name="TP" x="0" y="0" drill="1.7018" diameter="2.54" shape="octagon"/>
+<text x="-1.143" y="1.397" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="0" y="0" size="0.0254" layer="27">&gt;VALUE</text>
+<text x="-1.27" y="-3.175" size="1" layer="37">&gt;TP_SIGNAL_NAME</text>
+<rectangle x1="-0.3302" y1="-0.3302" x2="0.3302" y2="0.3302" layer="51"/>
 </package>
 </packages>
 </library>
@@ -430,68 +436,73 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="U1" library="TMP36" package="SOT-23" value="TMP36" x="37.846" y="6.604" smashed="yes" rot="R90">
-<attribute name="NAME" x="34.671" y="7.112" size="0.8128" layer="25" rot="R270"/>
+<element name="U1" library="TMP36" package="SOT-23" value="TMP36" x="16.51" y="2.286" smashed="yes" rot="R90"/>
+<element name="R1" library="rcl" package="R0603" value="1K" x="11.43" y="2.286" smashed="yes" rot="R270"/>
+<element name="C11" library="rcl" package="C0603" value="0.1uF" x="13.462" y="2.286" smashed="yes" rot="R270"/>
+<element name="S" library="testpad" package="P1-17" value="TPSQPAD1-17" x="8.636" y="2.286" smashed="yes">
+<attribute name="TP_SIGNAL_NAME" value="" x="8.636" y="-0.254" size="1" layer="37"/>
+<attribute name="NAME" x="9.668" y="0.542" size="0.8128" layer="25"/>
 </element>
-<element name="R1" library="rcl" package="R0603" value="1K" x="32.766" y="6.604" smashed="yes" rot="R270"/>
-<element name="C11" library="rcl" package="C0603" value="0.1uF" x="34.798" y="6.604" smashed="yes" rot="R270"/>
-<element name="S" library="testpad" package="TP20R" value="TPSQTP20R" x="34.163" y="9.652" smashed="yes">
-<attribute name="TP_SIGNAL_NAME" value="" x="34.163" y="7.112" size="1" layer="37"/>
-<attribute name="NAME" x="34.941" y="10.575" size="0.8128" layer="25"/>
+<element name="5V" library="testpad" package="P1-17" value="TPSQPAD1-17" x="5.207" y="2.286" smashed="yes">
+<attribute name="TP_SIGNAL_NAME" value="" x="5.207" y="-0.254" size="1" layer="37"/>
+<attribute name="NAME" x="6.112" y="3.336" size="0.8128" layer="25"/>
 </element>
-<element name="5V" library="testpad" package="TP20R" value="TPSQTP20R" x="37.592" y="9.652" smashed="yes">
-<attribute name="TP_SIGNAL_NAME" value="" x="37.592" y="7.112" size="1" layer="37"/>
-<attribute name="NAME" x="38.624" y="8.416" size="0.8128" layer="25"/>
-</element>
-<element name="G" library="testpad" package="TP20R" value="TPSQTP20R" x="35.56" y="3.048" smashed="yes">
-<attribute name="TP_SIGNAL_NAME" value="" x="35.56" y="0.508" size="1" layer="37"/>
-<attribute name="NAME" x="36.846" y="2.574" size="0.8128" layer="25"/>
+<element name="G" library="testpad" package="P1-17" value="TPSQPAD1-17" x="1.905" y="2.286" smashed="yes">
+<attribute name="TP_SIGNAL_NAME" value="" x="1.905" y="-0.254" size="1" layer="37"/>
+<attribute name="NAME" x="0.27" y="0.415" size="0.8128" layer="25"/>
 </element>
 </elements>
 <signals>
 <signal name="N$1">
 <contactref element="R1" pad="1"/>
 <contactref element="S" pad="TP"/>
-<wire x1="34.163" y1="9.652" x2="34.163" y2="8.851" width="0.4064" layer="1"/>
-<wire x1="34.163" y1="8.851" x2="32.766" y2="7.454" width="0.6096" layer="1"/>
+<wire x1="11.43" y1="3.136" x2="9.486" y2="3.136" width="0.2032" layer="1"/>
+<wire x1="9.486" y1="3.136" x2="8.636" y2="2.286" width="0.2032" layer="1"/>
 </signal>
 <signal name="N$2">
 <contactref element="R1" pad="2"/>
 <contactref element="U1" pad="1"/>
-<wire x1="33.528" y1="6.604" x2="32.766" y2="5.842" width="0.2032" layer="1"/>
-<wire x1="32.766" y1="5.842" x2="32.766" y2="5.754" width="0.254" layer="1"/>
-<wire x1="33.528" y1="6.604" x2="35.56" y2="6.604" width="0.2032" layer="1"/>
-<wire x1="35.56" y1="6.604" x2="35.814" y2="6.35" width="0.2032" layer="1"/>
-<wire x1="35.814" y1="6.35" x2="37.338" y2="6.35" width="0.2032" layer="1"/>
-<wire x1="37.338" y1="6.35" x2="38.034" y2="5.654" width="0.2032" layer="1"/>
-<wire x1="38.034" y1="5.654" x2="39.1461" y2="5.654" width="0.2032" layer="1"/>
+<wire x1="12.192" y1="2.286" x2="11.43" y2="1.524" width="0.2032" layer="1"/>
+<wire x1="11.43" y1="1.524" x2="11.43" y2="1.436" width="0.254" layer="1"/>
+<wire x1="12.192" y1="2.286" x2="14.224" y2="2.286" width="0.2032" layer="1"/>
+<wire x1="14.224" y1="2.286" x2="14.478" y2="2.032" width="0.2032" layer="1"/>
+<wire x1="14.478" y1="2.032" x2="16.002" y2="2.032" width="0.2032" layer="1"/>
+<wire x1="16.002" y1="2.032" x2="16.698" y2="1.336" width="0.2032" layer="1"/>
+<wire x1="16.698" y1="1.336" x2="17.8101" y2="1.336" width="0.2032" layer="1"/>
 </signal>
 <signal name="5V">
 <contactref element="C11" pad="1"/>
 <contactref element="U1" pad="4"/>
 <contactref element="U1" pad="2"/>
-<wire x1="36.5459" y1="7.554" x2="36.4459" y2="7.454" width="0.3048" layer="1"/>
-<wire x1="36.4459" y1="7.454" x2="34.798" y2="7.454" width="0.4064" layer="1"/>
-<wire x1="36.4799" y1="7.62" x2="36.5459" y2="7.554" width="0.254" layer="1"/>
-<wire x1="37.846" y1="7.366" x2="36.7339" y2="7.366" width="0.4064" layer="1"/>
-<wire x1="36.7339" y1="7.366" x2="36.5459" y2="7.554" width="0.254" layer="1"/>
-<wire x1="39.1461" y1="6.604" x2="38.608" y2="6.604" width="0.254" layer="1"/>
-<wire x1="38.608" y1="6.604" x2="37.846" y2="7.366" width="0.4064" layer="1"/>
+<wire x1="15.2099" y1="3.236" x2="15.1099" y2="3.136" width="0.3048" layer="1"/>
+<wire x1="15.1099" y1="3.136" x2="13.462" y2="3.136" width="0.4064" layer="1"/>
+<wire x1="15.1439" y1="3.302" x2="15.2099" y2="3.236" width="0.254" layer="1"/>
+<wire x1="16.51" y1="3.048" x2="15.3979" y2="3.048" width="0.2032" layer="1"/>
+<wire x1="15.3979" y1="3.048" x2="15.2099" y2="3.236" width="0.254" layer="1"/>
+<wire x1="17.8101" y1="2.286" x2="17.272" y2="2.286" width="0.254" layer="1"/>
+<wire x1="17.272" y1="2.286" x2="16.51" y2="3.048" width="0.2032" layer="1"/>
 <contactref element="5V" pad="TP"/>
-<wire x1="37.592" y1="9.652" x2="37.592" y2="7.62" width="0.6096" layer="1"/>
-<wire x1="37.592" y1="7.62" x2="37.846" y2="7.366" width="0.4064" layer="1"/>
+<wire x1="5.207" y1="2.286" x2="5.334" y2="2.286" width="0.254" layer="1"/>
+<wire x1="5.334" y1="2.286" x2="7.112" y2="4.064" width="0.2032" layer="1"/>
+<wire x1="7.112" y1="4.064" x2="12.534" y2="4.064" width="0.2032" layer="1"/>
+<wire x1="12.534" y1="4.064" x2="13.462" y2="3.136" width="0.2032" layer="1"/>
 </signal>
 <signal name="C1">
 <contactref element="C11" pad="2"/>
 <contactref element="U1" pad="5"/>
-<wire x1="36.5459" y1="5.654" x2="35.433" y2="5.654" width="0.6096" layer="1"/>
-<wire x1="35.433" y1="5.654" x2="34.898" y2="5.654" width="0.6096" layer="1"/>
-<wire x1="34.898" y1="5.654" x2="34.798" y2="5.754" width="0.254" layer="1"/>
+<wire x1="15.2099" y1="1.336" x2="13.562" y2="1.336" width="0.6096" layer="1"/>
+<wire x1="13.562" y1="1.336" x2="13.462" y2="1.436" width="0.254" layer="1"/>
 <contactref element="G" pad="TP"/>
-<wire x1="35.56" y1="3.048" x2="35.433" y2="3.683" width="0.4064" layer="1"/>
-<wire x1="35.433" y1="3.683" x2="35.433" y2="5.654" width="0.4064" layer="1"/>
+<wire x1="1.905" y1="2.286" x2="1.905" y2="2.159" width="0.254" layer="1"/>
+<wire x1="1.905" y1="2.159" x2="3.556" y2="0.508" width="0.2032" layer="1"/>
+<wire x1="3.556" y1="0.508" x2="12.534" y2="0.508" width="0.2032" layer="1"/>
+<wire x1="12.534" y1="0.508" x2="13.462" y2="1.436" width="0.2032" layer="1"/>
 </signal>
 </signals>
+<errors>
+<approved hash="5,1,ca93bc77a983d961"/>
+<approved hash="5,1,df0caff2ba06ccfe"/>
+</errors>
 </board>
 </drawing>
 </eagle>

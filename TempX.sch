@@ -5587,9 +5587,9 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="U1" library="TMP36" deviceset="TMP36" device=""/>
 <part name="R1" library="rcl" deviceset="R-US_" device="R0603" value="1K"/>
 <part name="C11" library="rcl" deviceset="C-US" device="C0603" value="0.1uF"/>
-<part name="S" library="testpad" deviceset="TPSQ" device="TP20R" value="TPSQTP20R"/>
-<part name="5V" library="testpad" deviceset="TPSQ" device="TP20R" value="TPSQTP20R"/>
-<part name="G" library="testpad" deviceset="TPSQ" device="TP20R" value="TPSQTP20R"/>
+<part name="S" library="testpad" deviceset="TPSQ" device="PAD1-17" value="TPSQPAD1-17"/>
+<part name="5V" library="testpad" deviceset="TPSQ" device="PAD1-17" value="TPSQPAD1-17"/>
+<part name="G" library="testpad" deviceset="TPSQ" device="PAD1-17" value="TPSQPAD1-17"/>
 </parts>
 <sheets>
 <sheet>
